@@ -12,7 +12,7 @@
 
     <item android:id="@+id/spcprod" android:title="@string/spc_products" xmlns:ns8="http://schemas.android.com/apk/res-auto" ns8:showAsAction="never">
         <menu>
-            <item android:id="@+id/spchome" android:title="@string/home_page"/>
+            <item android:id="@+id/spchome" android:title="@string/spc_home_page"/>
             <item android:id="@+id/mesoanalysis" android:title="@string/mesoanalysis"/>
             <item android:id="@+id/swomcd" android:title="@string/mesoscale_disc"/>
             <item android:id="@+id/swowatch" android:title="@string/convective_watches"/>
@@ -25,6 +25,7 @@
     </item>
     <item android:id="@+id/satellite" android:title="@string/satellite" xmlns:ns9="http://schemas.android.com/apk/res-auto" ns9:showAsAction="never">
         <menu>
+            <item android:id="@+id/geocolor" android:title="@string/geocolor"/>
             <item android:id="@+id/visual" android:title="@string/visible"/>
             <item android:id="@+id/visualloop" android:title="@string/visible_loop"/>
             <item android:id="@+id/infrared" android:title="@string/infrared"/>
@@ -37,12 +38,46 @@
         </menu>
     </item>
 
+    <item android:id="@+id/satellitebands" android:title="@string/satellitebands" xmlns:ns9="http://schemas.android.com/apk/res-auto" ns9:showAsAction="never">
+        <menu>
+            <item android:id="@+id/band1" android:title="@string/band1"/>
+            <item android:id="@+id/band2" android:title="@string/band2"/>
+            <item android:id="@+id/band3" android:title="@string/band3"/>
+            <item android:id="@+id/band4" android:title="@string/band4"/>
+            <item android:id="@+id/band5" android:title="@string/band5"/>
+            <item android:id="@+id/band6" android:title="@string/band6"/>
+            <item android:id="@+id/band7" android:title="@string/band7"/>
+            <item android:id="@+id/band8" android:title="@string/band8"/>
+            <item android:id="@+id/band9" android:title="@string/band9"/>
+            <item android:id="@+id/band10" android:title="@string/band10"/>
+            <item android:id="@+id/band11" android:title="@string/band11"/>
+            <item android:id="@+id/band12" android:title="@string/band12"/>
+            <item android:id="@+id/band13" android:title="@string/band13"/>
+            <item android:id="@+id/band14" android:title="@string/band14"/>
+            <item android:id="@+id/band15" android:title="@string/band15"/>
+            <item android:id="@+id/band16" android:title="@string/band16"/>
+
+
+        </menu>
+    </item>
+
+
+
+    <!--
+    <item
+        android:id="@+id/settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+        -->
+    <item
+    android:id="@+id/about"
+    android:title="@string/about"
+    app:showAsAction="never" />
 
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:id="@+id/exit"
+        android:title="@string/exit"
         app:showAsAction="never" />
 
 

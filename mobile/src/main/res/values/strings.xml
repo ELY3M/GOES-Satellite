@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">GOES Satellite</string>
-    <string name="action_settings">Settings</string>
+
+    <string name="app_description">\"GOES Satellite\" is an app that only show you GOES satellites that will help you with weather and storm targeting for storm chasing.</string>
+
+    <string name="version_text">Version</string>
+    <string name="license">License: GPL3 \nhttp://www.gnu.org/licenses/gpl.html</string>
+    <string name="copyright">Developer: ELY M.\n</string>
+    <string name="home_page">Project Page: https://github.com/ELY3M/GOES-Satellite\n</string>
+
+
+
+    <string name="settings">Settings</string>
     <string name="share">Share</string>
 
     <string name="radar_mosaic">Conus radar</string>
@@ -14,6 +24,25 @@
     <string name="water_vapor">Water Vapor</string>
     <string name="water_vapor_loop">Water vapor loop</string>
 
+    <string name="geocolor">GeoColor</string>
+    <string name="satellitebands">Satellite Bands</string>
+    <string name="band1">Band 1 - Visible: Blue</string>
+    <string name="band2">Band 2 - Visible: Red</string>
+    <string name="band3">Band 3 - Near IR: "Veggie"</string>
+    <string name="band4">Band 4 - Near IR: Cirrus</string>
+    <string name="band5">Band 5 - Near IR: Snow/Ice</string>
+    <string name="band6">Band 6 - Near IR: Cloud particle</string>
+    <string name="band7">Band 7 - IR: Shortwave</string>
+    <string name="band8">Band 8 - IR: Water Vapor - Upper</string>
+    <string name="band9">Band 9 - IR: Water Vapor - Mid</string>
+    <string name="band10">Band 10 - IR: Water Vapor - Lower</string>
+    <string name="band11">Band 11 - IR: Cloud-top phase</string>
+    <string name="band12">Band 12 - IR: Ozone</string>
+    <string name="band13">Band 13 - IR: Clean longwave</string>
+    <string name="band14">Band 14 - IR: Longwave</string>
+    <string name="band15">Band 15 - IR: Dirty longwave</string>
+    <string name="band16">Band 16 - IR: CO&#8322; longwave</string>
+
     <string name="conus_infrared">CONUS infrared</string>
     <string name="conus_visible">CONUS visible</string>
     <string name="conus_water_vapor">CONUS water vapor</string>
@@ -23,7 +52,7 @@
     <string name="mesoscale_disc">Mesoscale disc.</string>
 
     <string name="spc_products">SPC products</string>
-    <string name="home_page">Home Page</string>
+    <string name="spc_home_page">SPC Home Page</string>
     <string name="day_1_convective_outlook">Day 1 convective outlook</string>
     <string name="day_1_outlook">Day 1 Outlook</string>
     <string name="day_1_outlook_">Day 1 outlook*</string>
@@ -31,6 +60,10 @@
     <string name="day_3_outlook">Day 3 Outlook</string>
     <string name="day_4_8_outlook">Day 4-8 Outlook</string>
     <string name="fire_weather">Fire Weather</string>
+
+
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
 
 
 

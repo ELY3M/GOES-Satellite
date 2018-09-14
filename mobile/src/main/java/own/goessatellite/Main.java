@@ -1,8 +1,11 @@
 package own.goessatellite;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Location;
@@ -23,9 +26,12 @@ import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.InputStream;
@@ -103,69 +109,72 @@ public class Main extends AppCompatActivity implements ConnectionCallbacks, OnCo
         int id = item.getItemId();
 
         if (id == R.id.conusradar) {
-            RequestConusRadar();
+            requestConusRadar();
         }
 
         if (id == R.id.spchome) {
-            SPCHomePage();
+            requestSPCHomePage();
         }
 
         if (id == R.id.mesoanalysis) {
-            SPCMesoAnalysis();
+            requestSPCMesoAnalysis();
         }
 
         if (id == R.id.swomcd) {
-            RequestMCD();
+            requestMCD();
         }
 
         if (id == R.id.swowatch) {
-            RequestWatches();
+            requestWatches();
         }
 
         if (id == R.id.spcday1) {
-            RequestSwody1();
+            requestSwody1();
         }
 
         if (id == R.id.spcday2) {
-            RequestSwody2();
+            requestSwody2();
         }
 
         if (id == R.id.spcday3) {
-            RequestSwody3();
+            requestSwody3();
         }
 
         if (id == R.id.spcday48) {
-            RequestSwody48();
+            requestSwody48();
         }
 
         if (id == R.id.spcfire) {
-            RequestSPCFireWeather();
+            requestSPCFireWeather();
         }
 
+        if (id == R.id.geocolor) {
+            requestGeoColorSatellite();
+        }
 
         if (id == R.id.visual) {
-            RequestVisibleSatellite(0);
+            requestVisibleSatellite(0);
         }
 
         if (id == R.id.visualloop) {
-            RequestVisibleSatellite(6);
+            requestVisibleSatellite(6);
         }
 
         if (id == R.id.infrared) {
-            RequestIRSatellite(0);
+            requestIRSatellite(0);
         }
 
         if (id == R.id.infraredloop) {
-            RequestIRSatellite(6);
+            requestIRSatellite(6);
         }
 
         if (id == R.id.watervapor) {
-            RequestWaterVaporSatellite(0);
+            requestWaterVaporSatellite(0);
         }
 
 
         if (id == R.id.watervaporloop) {
-            RequestIRSatellite(6);
+            requestIRSatellite(6);
         }
 
         if (id == R.id.visualconus) {
@@ -180,9 +189,67 @@ public class Main extends AppCompatActivity implements ConnectionCallbacks, OnCo
             requestWVConus(1);
         }
 
+        if (id == R.id.band1) {
+            requestband1Satellite();
+        }
+        if (id == R.id.band2) {
+            requestband2Satellite();
+        }
+        if (id == R.id.band3) {
+            requestband3Satellite();
+        }
+        if (id == R.id.band4) {
+            requestband4Satellite();
+        }
+        if (id == R.id.band5) {
+            requestband5Satellite();
+        }
+        if (id == R.id.band6) {
+            requestband6Satellite();
+        }
+        if (id == R.id.band7) {
+            requestband7Satellite();
+        }
+        if (id == R.id.band8) {
+            requestband8Satellite();
+        }
+        if (id == R.id.band9) {
+            requestband9Satellite();
+        }
+        if (id == R.id.band10) {
+            requestband10Satellite();
+        }
+        if (id == R.id.band11) {
+            requestband11Satellite();
+        }
+        if (id == R.id.band12) {
+            requestband12Satellite();
+        }
+        if (id == R.id.band13) {
+            requestband13Satellite();
+        }
+        if (id == R.id.band14) {
+            requestband14Satellite();
+        }
+        if (id == R.id.band15) {
+            requestband15Satellite();
+        }
+        if (id == R.id.band16) {
+            requestband16Satellite();
+        }
 
-        if (id == R.id.action_settings) {
-            return true;
+
+
+        //if (id == R.id.settings) {
+        //    return true;
+        //}
+
+        if (id == R.id.about) {
+            showAbout(this);
+        }
+
+        if (id == R.id.exit) {
+            System.exit(0);
         }
 
 
@@ -206,12 +273,12 @@ public class Main extends AppCompatActivity implements ConnectionCallbacks, OnCo
     }
 
 
-    public void RequestConusRadar() {
+    public void requestConusRadar() {
         ShowUrl("https://radar.weather.gov/ridge/Conus/RadarImg/latest.gif");
     }
 
 
-    public void RequestSPCFireWeather() {
+    public void requestSPCFireWeather() {
         ShowUrl("http://www.spc.noaa.gov/m/#day1fire");
     }
 
@@ -229,7 +296,7 @@ public class Main extends AppCompatActivity implements ConnectionCallbacks, OnCo
 
 
 
-    public void RequestIRSatellite(int numFrames) {
+    public void requestIRSatellite(int numFrames) {
         String url;
         float lat = 0.0f;
         float lon = 0.0f;
@@ -254,19 +321,76 @@ public class Main extends AppCompatActivity implements ConnectionCallbacks, OnCo
         ShowUrl(url);
     }
 
-    public void RequestMCD() {
+    public void requestMCD() {
         ShowUrl("http://www.spc.noaa.gov/m/#mesodisc");
     }
 
-    public void SPCMesoAnalysis() {
+    public void requestSPCMesoAnalysis() {
         ShowUrl("http://www.spc.noaa.gov/exper/mesoanalysis/new/mobile.php");
     }
 
-    public void SPCHomePage() {
+    public void requestSPCHomePage() {
         ShowUrl("http://www.spc.noaa.gov/m/");
     }
 
-    public void RequestVisibleSatellite(int numFrames) {
+
+    public void requestGeoColorSatellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/2500x1500.jpg");
+    }
+
+    public void requestband1Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/01/2500x1500.jpg");
+    }
+    public void requestband2Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/02/2500x1500.jpg");
+    }
+    public void requestband3Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/03/2500x1500.jpg");
+    }
+    public void requestband4Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/04/2500x1500.jpg");
+    }
+    public void requestband5Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/05/2500x1500.jpg");
+    }
+    public void requestband6Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/06/2500x1500.jpg");
+    }
+    public void requestband7Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/07/2500x1500.jpg");
+    }
+    public void requestband8Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/08/2500x1500.jpg");
+    }
+    public void requestband9Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/09/2500x1500.jpg");
+    }
+    public void requestband10Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/10/2500x1500.jpg");
+    }
+    public void requestband11Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/11/2500x1500.jpg");
+    }
+    public void requestband12Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/12/2500x1500.jpg");
+    }
+    public void requestband13Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/13/2500x1500.jpg");
+    }
+    public void requestband14Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/14/2500x1500.jpg");
+    }
+    public void requestband15Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/15/2500x1500.jpg");
+    }
+    public void requestband16Satellite() {
+        ShowUrl("https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/16/2500x1500.jpg");
+    }
+
+
+
+    //band02
+    public void requestVisibleSatellite(int numFrames) {
         String url;
         float lat = 0.0f;
         float lon = 0.0f;
@@ -291,7 +415,8 @@ public class Main extends AppCompatActivity implements ConnectionCallbacks, OnCo
         ShowUrl(url);
     }
 
-    public void RequestWaterVaporSatellite(int numFrames) {
+    //band08
+    public void requestWaterVaporSatellite(int numFrames) {
         String url;
         float lat = 0.0f;
         float lon = 0.0f;
@@ -316,23 +441,23 @@ public class Main extends AppCompatActivity implements ConnectionCallbacks, OnCo
         ShowUrl(url);
     }
 
-    public void RequestWatches() {
+    public void requestWatches() {
         ShowUrl("http://www.spc.noaa.gov/m/#watches");
     }
 
-    public void RequestSwody1() {
+    public void requestSwody1() {
         ShowUrl("http://www.spc.noaa.gov/m/#day1ac");
     }
 
-    public void RequestSwody2() {
+    public void requestSwody2() {
         ShowUrl("http://www.spc.noaa.gov/m/#day2ac");
     }
 
-    public void RequestSwody3() {
+    public void requestSwody3() {
         ShowUrl("http://www.spc.noaa.gov/m/#day3ac");
     }
 
-    public void RequestSwody48() {
+    public void requestSwody48() {
         ShowUrl("http://www.spc.noaa.gov/m/#day48ac");
     }
 
@@ -579,5 +704,23 @@ public class Main extends AppCompatActivity implements ConnectionCallbacks, OnCo
     }
 
 
+    final static AlertDialog showAbout(Context context) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+        View view = LayoutInflater.from(context).inflate(R.layout.about, null);
+
+        PackageManager manager = context.getPackageManager();
+        PackageInfo info;
+        try {
+            info = manager.getPackageInfo(context.getPackageName(), 0);
+            TextView version = (TextView) view.findViewById(R.id.VersionNumber);
+            version.setText(info.versionName);
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+
+        dialog.setView(view);
+        dialog.setNeutralButton(android.R.string.ok, null);
+        dialog.setCancelable(true);
+        return dialog.show();
+    }
 
 }
