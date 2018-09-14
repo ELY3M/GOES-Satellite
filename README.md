@@ -10,4 +10,12 @@ the app will show you goes satellite have visiable / infrared / water vapor acce
 
 ![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot4.png)
 
+![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot5.png)
+
+![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot6.png)
+
 The hurricane you saw was Florence as it was hitting Carolinas
+
+
+
+
