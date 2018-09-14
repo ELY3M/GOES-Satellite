@@ -4,10 +4,10 @@ the app will show you goes satellite have visiable / infrared / water vapor acce
 
 ![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot1.png)
 
-![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot2png)
+![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot2.png)
 
-![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot3png)
+![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot3.png)
 
-![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot4png)
+![App image](https://raw.githubusercontent.com/ELY3M/GOES-Satellite/master/screenshots/screenshot4.png)
 
-The hurriance you saw was Florence as it was hitting Carolinas
+The hurricane you saw was Florence as it was hitting Carolinas
