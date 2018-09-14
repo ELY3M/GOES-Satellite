@@ -1,0 +1,49 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="own.goessatellite.Main">
+
+
+
+
+    <item android:id="@+id/conusradar" android:title="@string/radar_mosaic" xmlns:ns4="http://schemas.android.com/apk/res-auto" ns4:showAsAction="never"/>
+
+
+
+    <item android:id="@+id/spcprod" android:title="@string/spc_products" xmlns:ns8="http://schemas.android.com/apk/res-auto" ns8:showAsAction="never">
+        <menu>
+            <item android:id="@+id/spchome" android:title="@string/home_page"/>
+            <item android:id="@+id/mesoanalysis" android:title="@string/mesoanalysis"/>
+            <item android:id="@+id/swomcd" android:title="@string/mesoscale_disc"/>
+            <item android:id="@+id/swowatch" android:title="@string/convective_watches"/>
+            <item android:id="@+id/spcday1" android:title="@string/day_1_outlook"/>
+            <item android:id="@+id/spcday2" android:title="@string/day_2_outlook"/>
+            <item android:id="@+id/spcday3" android:title="@string/day_3_outlook"/>
+            <item android:id="@+id/spcday48" android:title="@string/day_4_8_outlook"/>
+            <item android:id="@+id/spcfire" android:title="@string/fire_weather"/>
+        </menu>
+    </item>
+    <item android:id="@+id/satellite" android:title="@string/satellite" xmlns:ns9="http://schemas.android.com/apk/res-auto" ns9:showAsAction="never">
+        <menu>
+            <item android:id="@+id/visual" android:title="@string/visible"/>
+            <item android:id="@+id/visualloop" android:title="@string/visible_loop"/>
+            <item android:id="@+id/infrared" android:title="@string/infrared"/>
+            <item android:id="@+id/infraredloop" android:title="@string/infrared_loop"/>
+            <item android:id="@+id/watervapor" android:title="@string/water_vapor"/>
+            <item android:id="@+id/watervaporloop" android:title="@string/water_vapor_loop"/>
+            <item android:id="@+id/visualconus" android:title="@string/conus_visible"/>
+            <item android:id="@+id/infraredconus" android:title="@string/conus_infrared"/>
+            <item android:id="@+id/watervaporconus" android:title="@string/conus_water_vapor"/>
+        </menu>
+    </item>
+
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+
+</menu>
